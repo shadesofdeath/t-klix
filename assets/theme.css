@@ -1,0 +1,86 @@
+/* ============================================================
+   Tıklix — Ortak Tasarım Sistemi
+   Tüm sayfalar ve oyunlar bu dosyayı kullanır.
+   ============================================================ */
+:root{
+  --bg:#0B0E1A; --bg-elev:#131829; --bg-sunken:#1A2036; --bg-hover:#212842;
+  --text:#F2F4FF; --text-dim:#9AA3C0; --text-faint:#5E677F;
+  --hair:rgba(255,255,255,.08); --hair-strong:rgba(255,255,255,.16);
+  --accent:#6C5CFF; --accent-2:#8B7CFF; --accent-soft:rgba(108,92,255,.16);
+  --mint:#00E5A8; --mint-soft:rgba(0,229,168,.14);
+  --pink:#FF4D8D; --pink-soft:rgba(255,77,141,.14);
+  --gold:#FFC53D; --gold-soft:rgba(255,197,61,.14);
+  --grad:linear-gradient(135deg,#6C5CFF 0%,#00C6FF 100%);
+  --grad-hot:linear-gradient(135deg,#FF4D8D,#FF8A3D);
+  --amb1:rgba(108,92,255,.18); --amb2:rgba(0,198,255,.10);
+  --shadow:0 1px 2px rgba(0,0,0,.5),0 12px 36px rgba(0,0,0,.45);
+  --shadow-lg:0 24px 70px rgba(0,0,0,.65),0 6px 16px rgba(0,0,0,.5);
+  --r:20px; --r-sm:14px; --r-xs:10px;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --maxw:1180px; --bar-h:60px;
+}
+[data-theme="light"]{
+  --bg:#F5F6FB; --bg-elev:#FFFFFF; --bg-sunken:#EBEDF5; --bg-hover:#E2E5F0;
+  --text:#14172A; --text-dim:#585F7A; --text-faint:#9AA0B8;
+  --hair:rgba(20,23,42,.09); --hair-strong:rgba(20,23,42,.16);
+  --accent:#5646E8; --accent-2:#6C5CFF; --accent-soft:rgba(86,70,232,.10);
+  --mint:#00A87B; --mint-soft:rgba(0,168,123,.10);
+  --pink:#E93A78; --pink-soft:rgba(233,58,120,.10);
+  --gold:#B77E00; --gold-soft:rgba(255,197,61,.18);
+  --amb1:rgba(86,70,232,.08); --amb2:rgba(0,198,255,.06);
+  --shadow:0 1px 2px rgba(20,23,50,.05),0 10px 30px rgba(20,23,50,.08);
+  --shadow-lg:0 18px 56px rgba(20,23,50,.16),0 4px 12px rgba(20,23,50,.1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
+  font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;overflow-x:hidden;transition:background .3s,color .3s}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(1000px 500px at 85% -10%,var(--amb1),transparent 60%),
+             radial-gradient(800px 420px at -5% -5%,var(--amb2),transparent 55%)}
+button{font-family:inherit;cursor:pointer;color:inherit;border:none;background:none}
+input{font-family:inherit}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent-soft)}
+.hidden{display:none!important}
+
+/* --- Üst bar --- */
+.bar{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--hair);
+  background:color-mix(in srgb,var(--bg) 74%,transparent);
+  backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px)}
+.bar-in{max-width:var(--maxw);margin:0 auto;height:var(--bar-h);padding:0 18px;
+  display:flex;align-items:center;gap:12px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:19px;letter-spacing:-.4px;flex-shrink:0}
+.logo svg{display:block}
+.logo b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* --- Butonlar --- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-weight:700;font-size:15px;padding:12px 22px;border-radius:999px;
+  transition:transform .15s,box-shadow .15s,background .15s;user-select:none;-webkit-user-select:none;
+  -webkit-tap-highlight-color:transparent}
+.btn:active{transform:scale(.96)}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 6px 20px rgba(108,92,255,.35)}
+.btn-primary:hover{box-shadow:0 8px 26px rgba(108,92,255,.5)}
+.btn-ghost{background:var(--bg-sunken);border:1px solid var(--hair)}
+.btn-ghost:hover{background:var(--bg-hover)}
+.icon-btn{width:40px;height:40px;border-radius:12px;display:inline-flex;align-items:center;
+  justify-content:center;background:var(--bg-sunken);border:1px solid var(--hair);
+  transition:background .15s,transform .15s;-webkit-tap-highlight-color:transparent}
+.icon-btn:hover{background:var(--bg-hover)}
+.icon-btn:active{transform:scale(.92)}
+
+/* --- Kart --- */
+.card{background:var(--bg-elev);border:1px solid var(--hair);border-radius:var(--r);box-shadow:var(--shadow)}
+
+/* --- Rozet --- */
+.chip{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;
+  font-size:13px;font-weight:600;background:var(--bg-sunken);border:1px solid var(--hair);
+  color:var(--text-dim);transition:all .15s;white-space:nowrap;-webkit-tap-highlight-color:transparent}
+.chip:hover{background:var(--bg-hover);color:var(--text)}
+.chip.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-2)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}

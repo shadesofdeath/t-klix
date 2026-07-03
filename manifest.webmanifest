@@ -1,0 +1,16 @@
+{
+  "name": "Tıklix — Ücretsiz Mobil Oyunlar",
+  "short_name": "Tıklix",
+  "description": "Onlarca ücretsiz mini oyun: refleks, bulmaca, hafıza ve arcade. Tıkla ve hemen oyna!",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0B0E1A",
+  "theme_color": "#0B0E1A",
+  "lang": "tr",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}
