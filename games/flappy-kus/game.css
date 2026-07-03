@@ -1,0 +1,44 @@
+/* Flappy Kuş — oyuna özel stiller (temel bileşenler assets/theme.css'ten gelir) */
+html,body{height:100%}
+body{display:flex;flex-direction:column;touch-action:manipulation;overscroll-behavior:none}
+
+.game-bar{display:flex;align-items:center;gap:12px;padding:12px 16px;
+  max-width:540px;width:100%;margin:0 auto}
+.game-name{display:flex;flex-direction:column;line-height:1.25}
+.game-name b{font-size:15.5px;font-weight:700;letter-spacing:-.2px}
+.game-bar .icon-btn:last-child{margin-left:auto}
+
+.stage{flex:1;display:flex;flex-direction:column;align-items:center;
+  width:100%;max-width:540px;margin:0 auto;padding:2px 16px 24px;gap:12px;min-height:0}
+
+/* --- HUD --- */
+.hud{display:flex;width:100%;align-items:center;padding:10px 6px}
+.hud-box{flex:1;display:flex;flex-direction:column;align-items:center;gap:1px}
+.hud-box b{font-size:19px;font-weight:700;letter-spacing:-.4px}
+.hud-sep{width:1px;height:26px;background:var(--hair)}
+
+/* --- Oyun alanı --- */
+.canvas-wrap{width:100%;flex:1;min-height:320px;max-height:640px;position:relative;
+  border-radius:var(--r);overflow:hidden;border:1px solid var(--hair);
+  background:#101221;touch-action:none;user-select:none;-webkit-user-select:none}
+.canvas-wrap canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+
+/* --- Ekranlar --- */
+.overlay{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:14px;text-align:center;
+  background:color-mix(in srgb,#0C0D12 72%,transparent);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  padding:28px;animation:fadein .28s ease}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.overlay h1{margin:0;font-size:clamp(26px,6vw,34px);font-weight:700;letter-spacing:-1px;color:#EDEEF3}
+.overlay p{margin:0;color:#8E93A3;font-size:14px;max-width:290px;line-height:1.6}
+.overlay .eyebrow{color:#565B6B}
+.best-tag{display:inline-flex;align-items:center;padding:7px 16px;border-radius:999px;
+  background:rgba(217,166,72,.12);color:#D9A648;font-weight:700;font-size:13px}
+.final-score{font-size:56px;font-weight:700;letter-spacing:-2.5px;line-height:1;color:#EDEEF3}
+.final-score.new-record{color:#E0A63F}
+.overlay-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:4px}
+.btn-big{font-size:15px;padding:13px 30px}
+
+.hint{margin:2px 0 0;color:var(--text-faint);font-size:12.5px;text-align:center}
+.hint b{color:var(--text-dim)}

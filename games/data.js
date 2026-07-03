@@ -24,6 +24,15 @@ window.TIKLIX_GAMES = [
     category: "bulmaca",
     difficulty: "Orta",
     duration: "~5 dk",
+    isNew: false,
+  },
+  {
+    id: "flappy-kus",
+    title: "Flappy Kuş",
+    desc: "Dokun, zıpla, boruların arasından geç. Tek dokunuş — sonsuz uçuş.",
+    category: "arcade",
+    difficulty: "Zor",
+    duration: "~1 dk",
     isNew: true,
   },
 ];
