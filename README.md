@@ -65,6 +65,7 @@ Tiklix.theme.init()                       // kayıtlı temayı uygula (her sayfa
 | Oyun | Kategori | Açıklama |
 |------|----------|----------|
 | Renk Farkı | Refleks | Tonu farklı kareyi süre dolmadan bul. Izgara büyür, fark azalır. |
+| 2048 | Bulmaca | Kaydır, aynı sayıları birleştir, 2048 karosuna ulaş. |
 
 ## Geliştirme
 

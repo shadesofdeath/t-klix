@@ -15,6 +15,15 @@ window.TIKLIX_GAMES = [
     category: "refleks",
     difficulty: "Orta",
     duration: "~2 dk",
+    isNew: false,
+  },
+  {
+    id: "2048",
+    title: "2048",
+    desc: "Kaydır, aynı sayıları birleştir, 2048 karosuna ulaş. Klasik bulmaca.",
+    category: "bulmaca",
+    difficulty: "Orta",
+    duration: "~5 dk",
     isNew: true,
   },
 ];

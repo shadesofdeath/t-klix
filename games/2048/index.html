@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>2048 — Tıklix</title>
+<meta name="description" content="Klasik 2048: kaydır, aynı sayıları birleştir, 2048 karosuna ulaş. Tarayıcıda anında oyna, rekorun cihazında saklanır.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0C0D12">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="canonical" href="https://tiklix.com/games/2048/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tıklix">
+<meta property="og:title" content="2048 — Tıklix">
+<meta property="og:description" content="Kaydır, birleştir, 2048'e ulaş. Tarayıcıda anında oyna.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='1' y='1' width='30' height='30' rx='8' fill='%235B67F5'/%3E%3Ccircle cx='16' cy='16' r='4.5' fill='white'/%3E%3Ccircle cx='16' cy='16' r='8.5' fill='none' stroke='white' stroke-width='2' opacity='.5'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../assets/theme.css">
+<link rel="stylesheet" href="game.css">
+</head>
+<body>
+
+<div class="game-bar">
+  <a class="icon-btn" href="../../" aria-label="Tıklix ana sayfaya dön" title="Ana sayfa">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+  </a>
+  <div class="game-name">
+    <span class="eyebrow">Bulmaca</span>
+    <b>2048</b>
+  </div>
+  <button class="icon-btn" id="soundBtn" aria-label="Sesi aç/kapat">
+    <svg id="soundOn" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9.5 9.5 0 0 1 0 13"/></svg>
+    <svg id="soundOff" class="hidden" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m16 9 6 6m0-6-6 6"/></svg>
+  </button>
+</div>
+
+<div class="stage">
+  <div class="hud card">
+    <div class="hud-box"><span class="eyebrow">Skor</span><b class="num" id="score">0</b></div>
+    <div class="hud-sep"></div>
+    <div class="hud-box"><span class="eyebrow">Rekor</span><b class="num" id="best">0</b></div>
+    <div class="hud-sep"></div>
+    <button class="hud-btn" id="newBtn">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.3"/><path d="M21 3v6h-6"/></svg>
+      Yeni oyun
+    </button>
+  </div>
+
+  <div class="board-wrap" id="boardWrap">
+    <div class="cells" id="cells"></div>
+    <div class="tiles" id="tiles"></div>
+
+    <div class="overlay hidden" id="endScreen">
+      <span class="eyebrow" id="endTitle">Oyun bitti</span>
+      <div class="final-score num" id="finalScore">0</div>
+      <p id="endMsg"></p>
+      <div class="overlay-btns">
+        <button class="btn btn-primary btn-big" id="retryBtn">Tekrar oyna</button>
+        <button class="btn btn-ghost btn-big hidden" id="continueBtn">Devam et</button>
+      </div>
+    </div>
+  </div>
+
+  <p class="hint">Kaydırarak veya ok tuşlarıyla oyna. Aynı sayılar birleşir — hedef <b>2048</b>.</p>
+</div>
+
+<script src="../../assets/core.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

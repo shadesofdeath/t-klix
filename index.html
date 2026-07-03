@@ -45,8 +45,11 @@
 .section-title{font-size:17px;font-weight:700;letter-spacing:-.3px;margin-right:auto}
 .section-title small{color:var(--text-faint);font-weight:600;margin-left:8px;font-size:13px}
 .cats{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;
+  min-width:0;max-width:100%;flex:0 1 auto;
+  touch-action:pan-x;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;
   background:var(--bg-sunken);border:1px solid var(--hair);border-radius:calc(var(--r-xs) + 4px);padding:4px}
 .cats::-webkit-scrollbar{display:none}
+.cats .chip{flex-shrink:0}
 .search{position:relative;flex-shrink:0}
 .search input{width:190px;padding:10px 14px 10px 38px;border-radius:var(--r-xs);
   border:1px solid var(--hair);background:var(--bg-elev);color:var(--text);
