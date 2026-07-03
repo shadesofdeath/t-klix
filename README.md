@@ -1,29 +1,39 @@
-# Tıklix 🕹️
+# Tıklix
 
-**Tıklix** — ücretsiz, mobil öncelikli tarayıcı oyunları sitesi. İndirme yok, kayıt yok: tıkla ve oyna!
+**Tıklix** — tarayıcıda anında açılan, mobil öncelikli mini oyunlar sitesi. İndirme yok, kayıt yok.
 
-## Yapı
+## Mimari
 
-Tamamen statik site (GitHub Pages uyumlu), framework yok, derleme adımı yok.
+Tamamen statik (GitHub Pages uyumlu), framework ve derleme adımı yok. Oyunlar birbirinden tamamen bağımsızdır: portal hiçbir oyunun kodunu yüklemez, her oyun yalnızca kendi kodunu ve ortak çekirdeği yükler.
 
 ```
-├── index.html              # Ana sayfa (oyun portalı: arama, kategoriler, ızgara)
-├── assets/theme.css        # Ortak tasarım sistemi (renkler, butonlar, kartlar, açık/koyu tema)
+├── index.html                # Portal (oyun ızgarası, kategori sekmeleri, arama)
+├── assets/
+│   ├── theme.css             # Tasarım sistemi: renk token'ları, buton/kart/chip bileşenleri, açık-koyu tema
+│   └── core.js               # Tiklix çekirdeği: localStorage kaydı, WebAudio sesleri, titreşim, tema
 ├── games/
-│   ├── data.js             # Oyun kaydı — yeni oyunlar buraya eklenir
-│   └── renk-farki/         # 🎨 Renk Farkı (ilk oyun)
-│       └── index.html
-├── manifest.webmanifest    # PWA manifest
-├── icon.svg                # Uygulama ikonu
-├── 404.html
-├── robots.txt
-└── sitemap.xml
+│   ├── data.js               # Oyun kaydı — YALNIZCA meta veri (başlık, kategori, zorluk…)
+│   └── renk-farki/           # Her oyun kendi klasöründe, kendi dosyalarıyla
+│       ├── index.html        #   İskelet + SEO
+│       ├── game.css          #   Oyuna özel stiller
+│       ├── game.js           #   Oyun mantığı (Tiklix API'sini kullanır)
+│       └── thumb.svg         #   Portal kartındaki kapak görseli
+├── manifest.webmanifest      # PWA
+├── icon.svg
+├── 404.html · robots.txt · sitemap.xml
 ```
+
+### Neden bu yapı?
+
+- **Oyun başına klasör:** Her oyun yüzlerce satır olacağı için kod tek dosyada toplanmaz; `game.js` büyüdükçe aynı klasör içinde bölünebilir (ör. `levels.js`, `render.js`).
+- **`games/data.js` sadece manifest:** Portal, oyun listesini bu hafif dosyadan okur. Bir oyunun kodundaki hata portalı asla bozamaz.
+- **`assets/core.js` ortak çekirdek:** Ses, kayıt, titreşim ve tema her oyunda aynı — kopyalanmaz, tek yerden yönetilir.
+- **`assets/theme.css` tasarım sistemi:** Tüm oyunlar aynı görsel kimliği token'lardan alır; tema (açık/koyu) her sayfada otomatik çalışır.
 
 ## Yeni oyun ekleme
 
-1. `games/<oyun-id>/index.html` oluştur (kendi içinde bağımsız, `../../assets/theme.css`'i kullan).
-2. `games/data.js` içindeki `TIKLIX_GAMES` dizisine kaydını ekle:
+1. `games/<oyun-id>/` klasörünü oluştur: `index.html`, `game.css`, `game.js`, `thumb.svg` (400×260).
+2. `games/data.js` içindeki `TIKLIX_GAMES` dizisine kaydı ekle:
 
 ```js
 {
@@ -31,23 +41,32 @@ Tamamen statik site (GitHub Pages uyumlu), framework yok, derleme adımı yok.
   title: "Oyun Adı",
   desc: "Kısa açıklama…",
   category: "refleks",        // refleks | bulmaca | hafiza | arcade
-  emoji: "🎯",
-  gradient: "linear-gradient(135deg,#FF4D8D,#FF8A3D)",
+  difficulty: "Orta",
+  duration: "~2 dk",
   isNew: true,
 }
 ```
 
-3. `sitemap.xml`'e URL'yi ekle. Bu kadar — ana sayfa ızgarası otomatik güncellenir.
+3. `sitemap.xml`'e URL'yi ekle. Portal ızgarası otomatik güncellenir.
+
+**Çekirdek API** (`assets/core.js`, her oyunda hazır):
+
+```js
+Tiklix.store.get("oyun-id:best", 0)      // kalıcı kayıt (localStorage)
+Tiklix.store.set("oyun-id:best", 120)
+Tiklix.audio.correct() / .wrong() / .level() / .over()
+Tiklix.audio.tone(660, .1, "sine", .12)  // özel ses
+Tiklix.vibrate(20)                        // titreşim
+Tiklix.theme.init()                       // kayıtlı temayı uygula (her sayfada çağır)
+```
 
 ## Oyunlar
 
 | Oyun | Kategori | Açıklama |
 |------|----------|----------|
-| 🎨 Renk Farkı | Refleks | Farklı renkteki kareyi süre dolmadan bul. Izgara büyür, fark azalır! |
+| Renk Farkı | Refleks | Tonu farklı kareyi süre dolmadan bul. Izgara büyür, fark azalır. |
 
 ## Geliştirme
-
-Herhangi bir statik sunucu yeterli:
 
 ```bash
 python3 -m http.server 8080

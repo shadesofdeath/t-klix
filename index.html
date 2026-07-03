@@ -3,80 +3,108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Tıklix — Ücretsiz Mobil Oyunlar: Tıkla, Oyna, Rekor Kır!</title>
-<meta name="description" content="Tıklix'te onlarca ücretsiz mobil oyun: refleks, bulmaca, hafıza ve arcade. İndirme yok, kayıt yok — tıkla ve hemen oyna!">
+<title>Tıklix — Tarayıcıda Anında Açılan Mini Oyunlar</title>
+<meta name="description" content="Tıklix: indirme ve kayıt gerektirmeyen, tarayıcıda anında açılan mini oyunlar. Refleks, bulmaca, hafıza ve arcade kategorilerinde sürekli büyüyen koleksiyon.">
 <meta name="keywords" content="ücretsiz oyun, mobil oyun, tarayıcı oyunu, refleks oyunu, bulmaca, html5 oyun, tıklix">
 <meta name="robots" content="index,follow">
 <meta name="author" content="Tıklix">
-<meta name="theme-color" content="#0B0E1A">
+<meta name="theme-color" content="#0C0D12">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Tıklix">
 <meta name="mobile-web-app-capable" content="yes">
 <link rel="canonical" href="https://tiklix.com/">
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tıklix">
-<meta property="og:title" content="Tıklix — Tıkla, Oyna, Rekor Kır!">
-<meta property="og:description" content="Onlarca ücretsiz mobil oyun. İndirme yok, kayıt yok — hemen oyna!">
+<meta property="og:title" content="Tıklix — Tarayıcıda Anında Açılan Mini Oyunlar">
+<meta property="og:description" content="İndirme ve kayıt yok. Refleks, bulmaca, hafıza ve arcade oyunları — anında oyna.">
 <meta property="og:url" content="https://tiklix.com/">
 <meta property="og:locale" content="tr_TR">
 <meta name="twitter:card" content="summary">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236C5CFF'/%3E%3Cstop offset='1' stop-color='%2300C6FF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='1' y='1' width='30' height='30' rx='9' fill='url(%23g)'/%3E%3Ccircle cx='16' cy='16' r='5' fill='white'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='white' stroke-width='2' opacity='.55'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='1' y='1' width='30' height='30' rx='8' fill='%235B67F5'/%3E%3Ccircle cx='16' cy='16' r='4.5' fill='white'/%3E%3Ccircle cx='16' cy='16' r='8.5' fill='none' stroke='white' stroke-width='2' opacity='.5'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/theme.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Tıklix","url":"https://tiklix.com/","description":"Ücretsiz mobil tarayıcı oyunları","inLanguage":"tr"}
+{"@context":"https://schema.org","@type":"WebSite","name":"Tıklix","url":"https://tiklix.com/","description":"Tarayıcıda anında açılan mini oyunlar","inLanguage":"tr"}
 </script>
 <style>
 /* --- Hero --- */
-.hero{max-width:var(--maxw);margin:0 auto;padding:44px 18px 8px;text-align:center}
-.hero h1{margin:0 0 12px;font-size:clamp(30px,6vw,52px);font-weight:800;letter-spacing:-1.2px;line-height:1.1}
-.hero h1 b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{margin:0 auto;max-width:520px;color:var(--text-dim);font-size:clamp(15px,2.5vw,17px)}
-.hero-stats{display:flex;justify-content:center;gap:10px;margin-top:22px;flex-wrap:wrap}
-.stat{display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:999px;
-  background:var(--bg-elev);border:1px solid var(--hair);font-size:13.5px;font-weight:600;color:var(--text-dim)}
-.stat b{color:var(--text)}
+.hero{max-width:var(--maxw);margin:0 auto;padding:52px 20px 12px}
+.hero .eyebrow{margin-bottom:14px}
+.hero h1{margin:0 0 14px;font-size:clamp(28px,5vw,44px);font-weight:700;
+  letter-spacing:-1.2px;line-height:1.12;max-width:560px}
+.hero h1 em{font-style:normal;color:var(--accent-2)}
+.hero p{margin:0;max-width:480px;color:var(--text-dim);font-size:clamp(14.5px,2.2vw,16px)}
+.hero-meta{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap}
+.hm{display:flex;flex-direction:column;gap:2px}
+.hm b{font-size:19px;font-weight:700;letter-spacing:-.4px}
+.hm span{font-size:12.5px;color:var(--text-faint)}
 
-/* --- Kategoriler + arama --- */
-.toolbar{max-width:var(--maxw);margin:0 auto;padding:26px 18px 4px;display:flex;flex-direction:column;gap:14px}
-.search{position:relative;max-width:440px;width:100%;margin:0 auto}
-.search input{width:100%;padding:13px 18px 13px 46px;border-radius:999px;border:1px solid var(--hair);
-  background:var(--bg-elev);color:var(--text);font-size:15px;outline:none;transition:border-color .15s,box-shadow .15s}
-.search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
-.search input::placeholder{color:var(--text-faint)}
-.search svg{position:absolute;left:17px;top:50%;transform:translateY(-50%);color:var(--text-faint);pointer-events:none}
-.cats{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 8px;scrollbar-width:none;justify-content:safe center}
+/* --- Araç çubuğu --- */
+.toolbar{max-width:var(--maxw);margin:0 auto;padding:34px 20px 6px;
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.section-title{font-size:17px;font-weight:700;letter-spacing:-.3px;margin-right:auto}
+.section-title small{color:var(--text-faint);font-weight:600;margin-left:8px;font-size:13px}
+.cats{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;
+  background:var(--bg-sunken);border:1px solid var(--hair);border-radius:calc(var(--r-xs) + 4px);padding:4px}
 .cats::-webkit-scrollbar{display:none}
+.search{position:relative;flex-shrink:0}
+.search input{width:190px;padding:10px 14px 10px 38px;border-radius:var(--r-xs);
+  border:1px solid var(--hair);background:var(--bg-elev);color:var(--text);
+  font-size:14px;outline:none;transition:border-color .15s,width .2s}
+.search input:focus{border-color:var(--accent);width:230px}
+.search input::placeholder{color:var(--text-faint)}
+.search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--text-faint);pointer-events:none}
+@media(max-width:640px){
+  .toolbar{flex-direction:column;align-items:stretch}
+  .section-title{margin-right:0}
+  .search input,.search input:focus{width:100%}
+}
 
 /* --- Oyun ızgarası --- */
-.grid{max-width:var(--maxw);margin:0 auto;padding:14px 18px 40px;display:grid;gap:16px;
-  grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
-@media(min-width:640px){.grid{grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}}
-.game-card{position:relative;display:flex;flex-direction:column;border-radius:var(--r);overflow:hidden;
-  background:var(--bg-elev);border:1px solid var(--hair);box-shadow:var(--shadow);
-  transition:transform .18s,box-shadow .18s,border-color .18s;-webkit-tap-highlight-color:transparent}
-.game-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--hair-strong)}
-.game-card:active{transform:scale(.97)}
-.game-art{aspect-ratio:16/11;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative}
-.game-art::after{content:"";position:absolute;inset:0;background:radial-gradient(320px 140px at 50% 120%,rgba(255,255,255,.22),transparent 70%)}
-.game-body{padding:13px 15px 15px;display:flex;flex-direction:column;gap:5px;flex:1}
-.game-title{font-weight:800;font-size:16px;letter-spacing:-.2px}
-.game-desc{font-size:12.8px;color:var(--text-dim);line-height:1.45;display:-webkit-box;
+.grid{max-width:var(--maxw);margin:0 auto;padding:18px 20px 48px;display:grid;gap:16px;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+@media(max-width:560px){.grid{grid-template-columns:1fr 1fr;gap:12px}}
+.game-card{position:relative;display:flex;flex-direction:column;border-radius:var(--r);
+  overflow:hidden;background:var(--bg-elev);border:1px solid var(--hair);
+  transition:transform .16s,box-shadow .16s,border-color .16s;-webkit-tap-highlight-color:transparent}
+.game-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--hair-strong)}
+.game-card:active{transform:scale(.98)}
+.game-thumb{aspect-ratio:20/13;background:var(--bg-sunken);position:relative}
+.game-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.badge{position:absolute;top:10px;left:10px;font-size:10.5px;font-weight:700;
+  letter-spacing:1px;text-transform:uppercase;color:#fff;background:var(--accent);
+  padding:4px 9px;border-radius:6px}
+.game-body{padding:14px 16px 15px;display:flex;flex-direction:column;gap:4px;flex:1}
+.game-title{font-weight:700;font-size:15.5px;letter-spacing:-.2px;display:flex;align-items:center;gap:8px}
+.game-title svg{margin-left:auto;color:var(--text-faint);flex-shrink:0;
+  transition:transform .16s,color .16s}
+.game-card:hover .game-title svg{transform:translateX(3px);color:var(--accent-2)}
+.game-desc{font-size:12.8px;color:var(--text-dim);line-height:1.5;display:-webkit-box;
   -webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.game-meta{margin-top:auto;padding-top:10px;display:flex;align-items:center;justify-content:space-between}
-.game-cat{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--text-faint)}
-.play-pill{font-size:12.5px;font-weight:800;color:#fff;background:var(--grad);padding:6px 15px;border-radius:999px}
-.badge-new{position:absolute;top:10px;right:10px;z-index:1;font-size:10.5px;font-weight:800;letter-spacing:.6px;
-  background:var(--grad-hot);color:#fff;padding:4px 10px;border-radius:999px;box-shadow:0 3px 10px rgba(255,77,141,.4)}
-.soon-card{opacity:.55;pointer-events:none}
-.soon-card .game-art{background:var(--bg-sunken);font-size:40px;filter:grayscale(.4)}
-.empty{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--text-dim)}
-.empty span{font-size:44px;display:block;margin-bottom:12px}
+.game-meta{margin-top:auto;padding-top:12px;display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:11px;font-weight:600;color:var(--text-dim);background:var(--bg-sunken);
+  border:1px solid var(--hair);padding:3px 9px;border-radius:6px}
+@media(max-width:560px){
+  .game-desc{display:none}
+  .game-body{padding:11px 12px 12px}
+  .game-title{font-size:14px}
+}
+
+/* --- Yakında kartı --- */
+.soon-card{border-style:dashed;border-color:var(--hair-strong);background:transparent;
+  align-items:center;justify-content:center;display:flex;flex-direction:column;
+  gap:8px;min-height:180px;color:var(--text-faint);text-align:center;padding:20px}
+.soon-card b{color:var(--text-dim);font-size:14px;font-weight:600}
+.soon-card span{font-size:12.5px;max-width:200px;line-height:1.5}
+
+.empty{grid-column:1/-1;text-align:center;padding:70px 20px;color:var(--text-dim)}
+.empty b{display:block;font-size:16px;color:var(--text);margin-bottom:6px}
 
 /* --- Footer --- */
-footer{border-top:1px solid var(--hair);padding:28px 18px 40px;text-align:center;color:var(--text-faint);font-size:13px}
-footer .logo{justify-content:center;margin-bottom:8px;font-size:16px}
+footer{border-top:1px solid var(--hair);padding:30px 20px 44px}
+.foot-in{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:14px;
+  flex-wrap:wrap;color:var(--text-faint);font-size:13px}
+.foot-in .logo{font-size:14.5px}
 </style>
 </head>
 <body>
@@ -84,54 +112,56 @@ footer .logo{justify-content:center;margin-bottom:8px;font-size:16px}
 <header class="bar">
   <div class="bar-in">
     <a class="logo" href="./" aria-label="Tıklix ana sayfa">
-      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true">
-        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#6C5CFF"/><stop offset="1" stop-color="#00C6FF"/>
-        </linearGradient></defs>
-        <rect x="1" y="1" width="30" height="30" rx="9" fill="url(#lg)"/>
-        <circle cx="16" cy="16" r="5" fill="#fff"/>
-        <circle cx="16" cy="16" r="9" fill="none" stroke="#fff" stroke-width="2" opacity=".55"/>
+      <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true">
+        <rect x="1" y="1" width="30" height="30" rx="8" fill="#5B67F5"/>
+        <circle cx="16" cy="16" r="4.5" fill="#fff"/>
+        <circle cx="16" cy="16" r="8.5" fill="none" stroke="#fff" stroke-width="2" opacity=".5"/>
       </svg>
-      <span>Tıkl<b>ix</b></span>
+      <span>Tıklix</span>
     </a>
     <div style="flex:1"></div>
     <button class="icon-btn" id="themeBtn" aria-label="Tema değiştir" title="Tema değiştir">
-      <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
     </button>
   </div>
 </header>
 
 <section class="hero">
-  <h1>Tıkla. Oyna.<br><b>Rekor kır!</b></h1>
-  <p>İndirme yok, kayıt yok. Telefonunda anında açılan ücretsiz mini oyunlar — her hafta yenileri geliyor.</p>
-  <div class="hero-stats">
-    <span class="stat">🎮 <b id="gameCount">1</b> oyun</span>
-    <span class="stat">⚡ Anında oyna</span>
-    <span class="stat">📱 Mobil uyumlu</span>
+  <div class="eyebrow">Ücretsiz · Kayıt yok · İndirme yok</div>
+  <h1>Tarayıcıda anında açılan <em>mini oyunlar</em></h1>
+  <p>Refleks, bulmaca, hafıza ve arcade. Koleksiyon her hafta büyüyor — skorların cihazında saklanır.</p>
+  <div class="hero-meta">
+    <div class="hm"><b class="num" id="gameCount">1</b><span>Oyun</span></div>
+    <div class="hm"><b>4</b><span>Kategori</span></div>
+    <div class="hm"><b>0 sn</b><span>Yükleme bekleme</span></div>
   </div>
 </section>
 
 <div class="toolbar">
+  <h2 class="section-title">Oyunlar<small id="countSmall"></small></h2>
+  <nav class="cats" id="cats" aria-label="Kategoriler"></nav>
   <div class="search">
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-    <input id="searchInput" type="search" placeholder="Oyun ara…" autocomplete="off">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="searchInput" type="search" placeholder="Oyun ara" autocomplete="off">
   </div>
-  <div class="cats" id="cats" role="tablist" aria-label="Kategoriler"></div>
 </div>
 
 <main class="grid" id="grid" aria-live="polite"></main>
 
 <footer>
-  <div class="logo">
-    <svg width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
-      <rect x="1" y="1" width="30" height="30" rx="9" fill="url(#lg)"/>
-      <circle cx="16" cy="16" r="5" fill="#fff"/>
-    </svg>
-    <span>Tıkl<b>ix</b></span>
+  <div class="foot-in">
+    <span class="logo">
+      <svg width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
+        <rect x="1" y="1" width="30" height="30" rx="8" fill="#5B67F5"/>
+        <circle cx="16" cy="16" r="4.5" fill="#fff"/>
+      </svg>
+      <span>Tıklix</span>
+    </span>
+    <span>© <span id="year"></span> — Tüm oyunlar tarayıcında çalışır.</span>
   </div>
-  <div>© <span id="year"></span> Tıklix — Tüm oyunlar tarayıcında çalışır, ücretsizdir.</div>
 </footer>
 
+<script src="assets/core.js"></script>
 <script src="games/data.js"></script>
 <script>
 (function(){
@@ -140,25 +170,16 @@ footer .logo{justify-content:center;margin-bottom:8px;font-size:16px}
   var CATS = window.TIKLIX_CATEGORIES || [];
   var state = { cat: "hepsi", q: "" };
 
-  /* --- Tema --- */
-  var root = document.documentElement;
-  var saved = null;
-  try { saved = localStorage.getItem("tiklix-theme"); } catch(e){}
-  if (saved) root.setAttribute("data-theme", saved);
-  document.getElementById("themeBtn").addEventListener("click", function(){
-    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    try { localStorage.setItem("tiklix-theme", next); } catch(e){}
-  });
+  Tiklix.theme.init();
+  document.getElementById("themeBtn").addEventListener("click", Tiklix.theme.toggle);
 
-  /* --- Kategoriler --- */
+  /* --- Kategori sekmeleri --- */
   var catsEl = document.getElementById("cats");
   CATS.forEach(function(c){
     var b = document.createElement("button");
     b.className = "chip" + (c.id === state.cat ? " on" : "");
-    b.setAttribute("role","tab");
     b.dataset.cat = c.id;
-    b.textContent = c.emoji + " " + c.label;
+    b.textContent = c.label;
     b.addEventListener("click", function(){
       state.cat = c.id;
       catsEl.querySelectorAll(".chip").forEach(function(x){ x.classList.toggle("on", x.dataset.cat === c.id); });
@@ -175,46 +196,58 @@ footer .logo{justify-content:center;margin-bottom:8px;font-size:16px}
 
   /* --- Izgara --- */
   var grid = document.getElementById("grid");
+  var arrow = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
+  function catLabel(id){
+    var c = CATS.find(function(x){ return x.id === id; });
+    return c ? c.label : id;
+  }
+
   function render(){
     var list = GAMES.filter(function(g){
       if (state.cat !== "hepsi" && g.category !== state.cat) return false;
       if (state.q && (g.title + " " + g.desc).toLocaleLowerCase("tr").indexOf(state.q) === -1) return false;
       return true;
     });
+
     grid.innerHTML = "";
     list.forEach(function(g){
       var a = document.createElement("a");
       a.className = "game-card";
       a.href = "games/" + g.id + "/";
       a.innerHTML =
-        (g.isNew ? '<span class="badge-new">YENİ</span>' : "") +
-        '<div class="game-art" style="background:' + g.gradient + '">' + g.emoji + '</div>' +
+        '<div class="game-thumb">' +
+          (g.isNew ? '<span class="badge">Yeni</span>' : "") +
+          '<img src="games/' + g.id + '/thumb.svg" alt="" loading="lazy">' +
+        '</div>' +
         '<div class="game-body">' +
-          '<div class="game-title"></div>' +
+          '<div class="game-title"><span></span>' + arrow + '</div>' +
           '<div class="game-desc"></div>' +
-          '<div class="game-meta"><span class="game-cat"></span><span class="play-pill">OYNA</span></div>' +
+          '<div class="game-meta"></div>' +
         '</div>';
-      a.querySelector(".game-title").textContent = g.title;
+      a.querySelector(".game-title span").textContent = g.title;
       a.querySelector(".game-desc").textContent = g.desc;
-      var cat = CATS.find(function(c){ return c.id === g.category; });
-      a.querySelector(".game-cat").textContent = cat ? cat.label : g.category;
+      var meta = a.querySelector(".game-meta");
+      [catLabel(g.category), g.difficulty, g.duration].forEach(function(t){
+        if (!t) return;
+        var s = document.createElement("span");
+        s.className = "tag";
+        s.textContent = t;
+        meta.appendChild(s);
+      });
       grid.appendChild(a);
     });
+
     if (!state.q && state.cat === "hepsi") {
       var soon = document.createElement("div");
       soon.className = "game-card soon-card";
-      soon.innerHTML =
-        '<div class="game-art">🔒</div>' +
-        '<div class="game-body">' +
-          '<div class="game-title">Çok yakında…</div>' +
-          '<div class="game-desc">Yeni oyunlar yolda! Her hafta yenisi ekleniyor.</div>' +
-          '<div class="game-meta"><span class="game-cat">Yakında</span></div>' +
-        '</div>';
+      soon.innerHTML = "<b>Yakında</b><span>Yeni oyunlar ekleniyor. Koleksiyon her hafta büyüyor.</span>";
       grid.appendChild(soon);
     }
     if (!list.length && (state.q || state.cat !== "hepsi")) {
-      grid.innerHTML = '<div class="empty"><span>🔍</span>Aradığın oyun bulunamadı.<br>Farklı bir kategori veya kelime dene.</div>';
+      grid.innerHTML = '<div class="empty"><b>Sonuç bulunamadı</b>Farklı bir kategori veya arama terimi deneyin.</div>';
     }
+    document.getElementById("countSmall").textContent = list.length + " oyun";
   }
 
   document.getElementById("gameCount").textContent = GAMES.length;
